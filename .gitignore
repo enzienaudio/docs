@@ -1,0 +1,9 @@
+build/
+
+# OSX
+.DS_Store
+
+# Node
+node_modules/
+.grunt/
+.sass-cache

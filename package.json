@@ -1,0 +1,42 @@
+{
+  "name": "heavy-docs",
+  "version": "0.0.1",
+  "description": "Heavy Documentation",
+  "main": "gruntfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "assemble-markdown-pages": "^0.1.1",
+    "grunt": "^0.4.0",
+    "grunt-assemble": "^0.4.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-http-server": "2.0.0",
+    "grunt-marked": "^0.1.3",
+    "grunt-open": "^0.2.3",
+    "grunt-toc": "^0.1.0",
+    "grunt-execute" : "0.2.2",
+    "grunt-sass" : "",
+    "grunt-browserify" : "",
+    "grunt-contrib-uglify" : "",
+    "matchdep": "^1.0.1",
+    "jsdom" : "9.2.1",
+    "node-handlebars" : "0.9.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enzienaudio/docs.git"
+  },
+  "keywords": [
+    "heavy"
+  ],
+  "author": "enzienaudio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enzienaudio/docs/issues"
+  },
+  "homepage": "https://github.com/enzienaudio/docs#readme"
+}
