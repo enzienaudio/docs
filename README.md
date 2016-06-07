@@ -11,5 +11,6 @@ Generate the website to `./build` and watch for changes
 
 ```
 $ npm install
+$ grunt build
 $ grunt serve
 ```
