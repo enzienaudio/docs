@@ -1,4 +1,5 @@
 build/
+src/js/toc.json
 
 # OSX
 .DS_Store
