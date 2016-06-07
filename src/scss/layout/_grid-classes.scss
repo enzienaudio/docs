@@ -1,0 +1,48 @@
+.container {
+  @include outer-container;
+}
+
+.page-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.row { @include row(); }
+
+.one-col { @include span-columns(1); }
+.two-cols { @include span-columns(2); }
+.three-cols { @include span-columns(3); }
+.four-cols { @include span-columns(4); }
+.five-cols { @include span-columns(5); }
+.six-cols { @include span-columns(6); }
+.seven-cols { @include span-columns(7); }
+.eight-cols { @include span-columns(8); }
+.nine-cols { @include span-columns(9); }
+.ten-cols { @include span-columns(10); }
+.eleven-cols { @include span-columns(11); }
+.full-width { @include fill-parent };
+
+.shift-one { @include shift(1); }
+.shift-two { @include shift(2); }
+.shift-two-half { @include shift(2.5); }
+.shift-three { @include shift(3); }
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}

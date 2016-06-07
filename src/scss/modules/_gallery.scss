@@ -1,0 +1,137 @@
+.gallery-wrapper {
+
+  .container {
+    padding: 60px 0;
+
+    a {
+      color: $pastel-blue;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: darken($pastel-blue, 15%);
+    }
+  }
+
+  p {
+    font-size: 18px;
+    padding-bottom: 20px;
+    color: lighten($light-black, 15%);
+  }
+
+  h2 {
+    color: lighten($light-black, 15%);
+  }
+
+  .icon {
+    text-align: center;
+  }
+
+  .gallery-row {
+    position: relative;
+    &::after {
+      content: ' ';
+      width: 0;
+      height: 0;
+      position: absolute;
+      z-index: 2;
+      top: 100%;
+      left: 50%;
+      margin-left: -30px;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 20px solid $pastel-green;
+    }
+
+    img {
+      width: 100%;
+      padding: 0px 30px;
+    }
+
+    iframe {
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      width: 100%;
+    }
+
+    @include media($tablet) {
+      iframe {
+        width: auto;
+      }
+
+      img {
+        width: auto;
+      }
+    }
+  }
+
+  .mmorph-slide {
+    background: $pastel-green;
+    &:after {
+      border-top: 20px solid $pastel-green;
+    }
+  }
+
+  .mogees-slide {
+    background: $pastel-pink;
+    &:after {
+      border-top: 20px solid $pastel-pink;
+    }
+  }
+
+  .bela-slide {
+    background: $pastel-blue;
+    a {
+      color: $grey;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: darken($grey, 15%);
+    }
+    &:after {
+      border-top: 20px solid $pastel-blue;
+    }
+  }
+
+  .owl-slide {
+    background: $pastel-green;
+    &:after {
+      border-top: 20px solid $pastel-green;
+    }
+  }
+
+  .firehelix-slide {
+    background: $pastel-pink;
+    &:after {
+      border-top: 20px solid $pastel-pink;
+    }
+  }
+
+
+  @include media(max-width 1400px) {
+    .content, .icon {
+      padding: 0 20px;
+    }
+  }
+
+  @include media($tablet) {
+    .container {
+      padding: 30px 0;
+    }
+
+    .icon {
+      display: none;
+    }
+
+    .content {
+      @include fill-parent();
+      @include shift(0);
+      text-align: center;
+    }
+  }
+
+  @include media($mobile) {
+    h2 { font-size: 24px; }
+    p { font-size: 16px; }
+  }
+
+}

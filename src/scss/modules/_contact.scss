@@ -1,0 +1,91 @@
+.contact-wrapper {
+
+  h2 {
+      padding: 0px 0 30px 0;
+      text-align: left;
+      color: lighten($light-black, 15%);
+  }
+
+  h3 {
+      padding: 0px 0 20px 0;
+      text-align: center;
+      color: lighten($light-black, 15%);
+  }
+
+  .container {
+    padding: 30px 50px 0;
+  }
+
+  .headshot {
+    padding: 10px;
+
+    img {
+      border-radius: 6px;
+    }
+
+    h3 {
+        padding: 20px 0 20px 0;
+        text-align: center;
+    }
+  }
+
+  .headshots {
+    background: $pastel-green;
+  }
+
+
+  .contact {
+    background: $pastel-pink;
+    padding: 30px 50px 30px;
+
+   .row {
+    width: auto;
+    padding: 10px 0 10px 0;
+    color: lighten($light-black, 15%);
+
+    .left {
+      text-align: right;
+    }
+
+    .right {
+      text-align: left;
+    }
+   }
+
+    a {
+      color: darken($pastel-blue, 15%);
+      text-decoration: underline;
+    }
+    a:hover {
+      color: darken($pastel-blue, 30%);
+    }
+  }
+
+  @include media($tablet) {
+    .container {
+      padding: 30px 20px 0;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+  }
+
+  @include media($mobile) {
+    .container {
+      padding: 30px 20px 0;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+  }
+}

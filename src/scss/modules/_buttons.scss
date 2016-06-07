@@ -1,0 +1,159 @@
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-transform: uppercase;
+  font-family: 'Avenir-Black', Arial, sans-serif;
+  cursor: pointer;
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  span {
+    display: block;
+  }
+
+  &.primary {
+    background-color: lighten($black, 10%);
+    color: $white;
+    font-size: 13px;
+    height: 50px;
+    margin: 20px 20px 20px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    transition: $transition-time;
+    width: 180px;
+
+    .triangle-topleft {
+      border-right: 180px solid transparent;
+      border-top: 80px solid $black;
+      height: 0;
+      transition: $transition-time;
+      width: 0;
+    }
+
+    span {
+      left: 20px;
+      margin-top: -7px;
+      position: absolute;
+      top: 50%;
+    }
+
+    &:after {
+      content: '\f0da';
+      font-family: FontAwesome;
+      font-size: 20px;
+      margin-top: -9px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transition: right $transition-time;
+    }
+
+    &:hover {
+      background-color: lighten($pastel-blue, 10%);
+      transition: $transition-time;
+
+      .triangle-topleft {
+        border-top: 90px solid $pastel-blue;
+        transition: $transition-time;
+      }
+
+      span {
+        text-shadow: 1px 1px darken($pastel-blue, 20%);
+      }
+
+      &:after {
+        right: 15px;
+        text-shadow: 1px 1px darken($pastel-blue, 20%);
+        transition: right $transition-time;
+      }
+    }
+  }
+
+  &.green {
+    background-color: darken($pastel-green, 20%);
+    color: $black;
+
+    .triangle-topleft {
+      border-top: 80px solid darken($pastel-green, 10%);
+    }
+
+    &:hover {
+      background-color: darken($pastel-green, 10%);
+
+      .triangle-topleft {
+        border-top: 90px solid $pastel-green;
+      }
+
+      span {
+        text-shadow: 1px 1px lighten($grey, 20%);
+      }
+
+      &:after {
+        text-shadow: none;
+      }
+    }
+  }
+
+  &.primary.white {
+    background-color: darken($white, 10%);
+    color: $grey3;
+
+    .triangle-topleft {
+      border-top: 80px solid $white;
+    }
+
+    &:hover {
+      background-color: darken($grey, 10%);
+
+      .triangle-topleft {
+        border-top: 90px solid $grey;
+      }
+
+      span {
+        text-shadow: 1px 1px lighten($grey, 20%);
+      }
+
+      &:after {
+        text-shadow: none;
+      }
+    }
+  }
+
+  &.secondary {
+    color: $black;
+    border: 2px solid $black;
+    padding: 8px 20px;
+    margin-right: 5px;
+    transition: $transition-time;
+
+    &:hover {
+      color: $pastel-blue;
+      border: 2px solid $pastel-blue;
+    }
+
+    &.filled {
+      color: $white;
+      background-color: $black;
+
+      &:hover {
+        background-color: $pastel-blue;
+      }
+    }
+  }
+
+  &.secondary.white{
+    color: $white;
+    border: 2px solid $white;
+    &:hover {
+      color: $pastel-blue;
+      border: 2px solid $pastel-blue;
+    }
+  }
+
+}

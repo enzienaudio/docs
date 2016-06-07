@@ -1,0 +1,18 @@
+.main-infographic {
+  width: 100%;
+  background-color: #333333;
+  @include linear-gradient(60deg, #333333 0%, #000000 100%);
+  text-align: center;
+
+  .container {
+    padding: 60px 0;
+
+    @include media($mobile) {
+      padding: 20px 0;
+
+      img {
+        width: 75%;
+      }
+    }
+  }
+}

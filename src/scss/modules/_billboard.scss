@@ -1,0 +1,39 @@
+.billboard {
+  width: 100%;
+  background-color: $grey;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .container {
+    padding: 80px 0;
+
+    @include media($mobile) {
+      padding: 30px 0;
+    }
+  }
+
+  .content {
+
+    @include media(max-width 1100px) {
+      @include span-columns(8);
+      @include shift(2);
+    }
+
+    @include media(max-width 720px) {
+      @include span-columns(6 of 8);
+      @include shift(1);
+    }
+
+    @include media($mobile) {
+      h2 { font-size: 24px; }
+      p.larger { font-size: 16px; }
+    }
+  }
+}
+
+#billboard-iso {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

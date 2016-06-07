@@ -1,0 +1,198 @@
+.side-nav {
+  position: relative;
+  height:100%;
+  min-height: 100%;
+  
+  
+  // transition:top 0.1s linear;
+
+   .nav-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      
+      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      &.stick {
+       position:fixed;
+        top:0;
+      }
+
+
+    }
+
+  .side-nav-ul {
+    margin-top: 20px;
+    margin-left:0;
+    position: relative;
+    top:0;
+
+    > li {
+      width: 90%;
+      width: calc(100% - 15px);
+
+      > ul {
+        margin-left:0;
+      }
+    }
+    
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  ul li {
+    width:100%;
+
+    a {
+      color: $black;
+      display: block;
+      width: 100%;
+      line-height: 60px;
+      padding-left: 20px;
+      text-decoration: none !important;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  ul > li {
+    border-bottom: 1px solid darken($grey, 10%);
+    position: relative;
+
+    &:first-child {
+      border-top: 1px solid darken($grey, 10%);
+    }
+
+    &.active > a {
+      border: none !important;
+
+      &:hover:after {
+        content : "close";
+        opacity: 0.2;
+        float:right;
+        margin-right: 1em;
+      }
+    }
+
+    &.active::after {
+      // position: absolute;
+      // content: ' ';
+      // width: 0;
+      // height: 0;
+      // top: 0;
+      // right: -20px;
+      // border-top: 30px solid transparent;
+      // border-bottom: 30px solid transparent;
+      // border-left: 20px solid green;
+    }
+
+  }
+
+  ul > li:nth-child(3n) {
+    a:hover,
+    &.active {
+      background-color: $pastel-green;
+      &:after {
+        border-left-color: $pastel-green;
+      }
+    }
+
+    ul > li a:hover,
+    ul > li a.active {
+      color: darken($pastel-green, 20%);
+    }
+    ul > li > ul > li a:hover,
+    ul > li > ul > li a.active {
+      color: darken($pastel-green, 20%);
+    }
+  }
+
+  ul > li:nth-child(3n+1) {
+    a:hover,
+    &.active {
+      background-color: $pastel-pink;
+      &:after {
+        border-left-color: $pastel-pink;
+      }
+    }
+
+    ul > li a:hover,
+    ul > li a.active {
+      color: darken($pastel-pink, 20%);
+    }
+  }
+
+  ul > li:nth-child(3n+2) {
+    a:hover,
+    &.active {
+      background-color: $pastel-blue;
+      &:after {
+        border-left-color: $pastel-blue;
+      }
+    }
+
+    ul > li a:hover,
+    ul > li a.active {
+      color: darken($pastel-blue, 20%);
+    }
+  }
+
+  ul > li > ul {
+    display: none;
+    margin-left: 10px;
+  }
+
+  ul > li > ul > li > ul {
+    display: block;
+  }
+
+  ul > li > ul > li {
+    padding-bottom: 0;
+    border: none;
+    background-color: darken($grey, 2.5%);
+
+    &:first-child {
+      border: none;
+    }
+
+    a {
+      padding-left: 40px;
+      line-height: 50px;
+      border: none;
+    }
+
+    a:hover,
+    a.active {
+      background-color: darken($grey, 5%) !important;
+    }
+  }
+
+  ul > li > ul > li > ul {
+    margin-left: 0;
+  }
+
+  ul > li > ul > li > ul > li {
+    font-size: 14px;
+
+    &:last-of-type {
+      padding-bottom: 10px;
+    }
+  }
+
+  ul li ul li ul a {
+    padding-left: 30px;
+    line-height: 30px;
+
+    &:before {
+      font-family: 'FontAwesome';
+      content: '\f0da';
+      margin-right: 8px;
+    }
+  }
+}

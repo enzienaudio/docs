@@ -1,0 +1,164 @@
+.focus-description-wrapper {
+
+  .container {
+    padding: 60px 0;
+  }
+
+  p {
+    font-size: 18px;
+    padding-bottom: 20px;
+    color: lighten($light-black, 15%);
+  }
+
+  h2 {
+    color: lighten($light-black, 15%);
+  }
+
+  .icon {
+    text-align: center;
+  }
+
+  .focus-row {
+    position: relative;
+    &::after {
+      content: ' ';
+      width: 0;
+      height: 0;
+      position: absolute;
+      z-index: 2;
+      top: 100%;
+      left: 50%;
+      margin-left: -30px;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 20px solid $pastel-green;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .design-slide {
+    background: $pastel-green;
+    &:after {
+      border-top: 20px solid $pastel-green;
+    }
+
+    img {
+      max-width: 300px;
+    }
+  }
+
+  .build-slide {
+    background: $pastel-pink;
+    &:after {
+      border-top: 20px solid $pastel-pink;
+    }
+
+    img {
+      max-width: 300px;
+    }
+  }
+
+  .integrate-slide {
+    background: $pastel-blue;
+    &:after {
+      border-top: 20px solid $pastel-blue;
+    }
+
+    .logo-container {
+      display: inline;
+      margin: 40px;
+
+      img {
+        vertical-align: middle;
+        padding: 20px 0;
+      }
+    }
+  }
+
+  .share-slide {
+    background: $white;
+    &:after {
+      border-top: 20px solid transparent;
+    }
+
+    img {
+      max-width: 280px;
+    }
+  }
+
+  .logos-row {
+    background: darken($pastel-blue, 20%);
+    position: relative;
+
+    &::after {
+      content: ' ';
+      width: 0;
+      height: 0;
+      position: absolute;
+      z-index: 2;
+      top: 100%;
+      left: 50%;
+      margin-left: -30px;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 20px solid darken($pastel-blue, 20%);
+    }
+
+    .container {
+      padding: 60px 0;
+      &:first-child {
+        padding-bottom: 0px;
+      }
+      div {
+        padding: 0 10px;
+        img {
+          width: 100%;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  @include media(max-width 1400px) {
+    .content, .icon {
+      padding: 0 20px;
+    }
+  }
+
+  @include media($tablet) {
+    .container {
+      padding: 30px 0;
+    }
+
+    .icon {
+      display: none;
+    }
+
+    .content {
+      @include fill-parent();
+      @include shift(0);
+      text-align: center;
+    }
+  }
+
+  @include media($mobile) {
+    h2 { font-size: 24px; }
+    p { font-size: 16px; }
+  }
+
+}
+
+.three-dee {
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  position: relative;
+
+  &:after {
+    content: " ";
+    position: absolute;
+  }
+}

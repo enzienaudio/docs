@@ -1,0 +1,98 @@
+.burger-menu-icon {
+  z-index: 11;
+  position: fixed;
+  top: 50px;
+  right: 80px;
+  // display: inline-block;
+  font-size: 49px;
+  cursor: pointer;
+  transition: $transition-time;
+
+  @include media(max-width 925px) {
+    right: 40px;
+  }
+
+  @include media(max-width 750px) {
+    top: 30px;
+    right: 20px;
+  }
+
+  @include media(max-width 510px) {
+    font-size: 35px;
+    top: 34px;
+  }
+
+  &.closed {
+    &:hover {
+      color: $pastel-blue;
+    }
+  }
+
+  &.open {
+    color: $white;
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.overlay {
+  &.hidden {
+    opacity: 0;
+    display: none;
+  }
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  color: $white;
+  padding: 40px;
+  text-align: center;
+  transition: opacity $transition-time;
+}
+
+.menu-overlay {
+  background-color: rgba(132, 198, 196, 0.95);
+}
+
+.primary-navigation {
+  list-style-type: none;
+  margin-left: 0;
+  opacity: 1;
+  font-size: 60px;
+  line-height: 1.4;
+  font-family: 'Avenir-Black', Arial, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  top: 50%;
+  margin-top: -252px; // half the height of the ul
+
+  a {
+    color: $white;
+    &:hover {
+      color: $black;
+    }
+  }
+
+  @include media(max-width 650px) {
+    font-size: 30px;
+    top: 15%;
+    margin-top: 0;
+  }
+}
+
+.sign-up-overlay,
+.login-overlay {
+  background-color: rgba(59, 59, 57, 0.95);
+
+  button {
+    margin: 15px 0;
+  }
+}
+
+.close-overlay {
+  margin-bottom: 80px !important;
+}

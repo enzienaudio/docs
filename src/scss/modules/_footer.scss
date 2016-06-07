@@ -1,0 +1,70 @@
+.sign-up-strip {
+  width: 100%;
+  background-color: $grey3;
+
+  .container {
+    padding: 60px 0;
+  }
+
+  button {
+    margin: 0 !important;
+  }
+
+  p {
+    color: $white;
+    font-size: 24px;
+    line-height: 50px;
+    padding-bottom: 0;
+  }
+}
+
+.main-footer {
+  width: 100%;
+  background-color: $blue-black;
+  text-align: center;
+  color: $white;
+
+  .container {
+    padding: 60px 0;
+  }
+
+  &.docs-footer .container{
+    padding: 10px 0;
+  }
+
+  a {
+    color: $white;
+    &:hover {
+      color: $pastel-green;
+    }
+  }
+
+  ul {
+    font-family: 'Avenir-Black', Arial, sans-serif;
+    list-style-type: none;
+    margin-left: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  li {
+    padding-bottom: 10px;
+  }
+
+  i {
+    font-size: 18px;
+  }
+}
+
+.legal-row {
+  margin-top: 20px;
+
+  img {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 11px;
+    color: $grey3;
+  }
+}

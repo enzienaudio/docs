@@ -1,0 +1,60 @@
+html {
+  font: 100%;
+}
+
+body {
+  font-family: 'Avenir-Book', Arial, sans-serif;
+  color: $black;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+button {
+  -webkit-font-smoothing: antialiased;
+}
+
+strong {
+  font-family: 'Avenir-Medium', Arial, sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Avenir-Book', Arial, sans-serif;
+  font-size: 46px;
+  padding-bottom: 30px;
+}
+
+h2 {
+  font-family: 'Avenir-Book', Arial, sans-serif;
+  font-size: 38px;
+  padding-bottom: 18px;
+}
+
+h3 {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+
+h4 {
+  font-family: 'Avenir-Black', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.4;
+  padding-bottom: 12px;
+  text-shadow: 0 0 1px rgba(0, 0, 0,0.2);
+
+  &.larger {
+    font-size: 18px;
+  }
+
+  &.smaller {
+    font-size: 14px;
+  }
+}
