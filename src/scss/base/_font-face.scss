@@ -23,6 +23,30 @@
 }
 
 @font-face {
+  font-family: 'Avenir-Heavy';
+  src: url('../font/Avenir-Heavy.eot');
+  src: url('../font/Avenir-Heavy.eot?#iefix') format('embedded-opentype'),
+       url('../font/Avenir-Heavy.woff2') format('woff2'),
+       url('../font/Avenir-Heavy.woff') format('woff'),
+       url('../font/Avenir-Heavy.ttf') format('truetype'),
+       url('../font/Avenir-Heavy.svg#Avenir-Heavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir-HeavyOblique';
+  src: url('../font/Avenir-HeavyOblique.eot');
+  src: url('../font/Avenir-HeavyOblique.eot?#iefix') format('embedded-opentype'),
+       url('../font/Avenir-HeavyOblique.woff2') format('woff2'),
+       url('../font/Avenir-HeavyOblique.woff') format('woff'),
+       url('../font/Avenir-HeavyOblique.ttf') format('truetype'),
+       url('../font/Avenir-HeavyOblique.svg#Avenir-HeavyOblique') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Avenir-Light';
   src: url('../font/Avenir-Light.eot');
   src: url('../font/Avenir-Light.eot?#iefix') format('embedded-opentype'),

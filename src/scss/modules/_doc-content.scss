@@ -3,21 +3,56 @@
 	margin-top: 0;
 
 	.documentation-content {
-	
+
 		margin-top:10px;
 
-		.hljs {
-			background:transparent !important; // hide the background 
+		hr {
+			margin-bottom: 30px;
 		}
 
+		h1 {
+			font-family: 'Avenir-Heavy';
+			padding-bottom: 5px;
+		}
+
+		h2 {
+			font-family: 'Avenir-Heavy';
+			font-size: xx-large;
+			padding-top: 30px;
+		}
+
+		h3 {
+			padding-top: 15px;
+		}
+
+		ul {
+			list-style-type: disc;
+			margin-left: 25px;
+			margin-bottom: 25px;
+			line-height: 1.4;
+		}
+
+		p.italic {
+	    font-style: italic;
+		}
+
+		.hljs {
+			background: transparent !important; // hide the background
+		}
+
+		code {
+			font-family: 'Avenir-Light';
+			background-color: $pastel-green;
+			color: $blue-black;
+		}
 	}
 
 	.documentation-footer {
+
 		margin-top:40px;
 		padding-top:20px;
 		width: 100%;
 		border-top:1px solid #efefef;
-
 		display:none;
 
 		&.visible {
