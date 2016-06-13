@@ -58,11 +58,13 @@
 
 	.documentation-footer {
 
-		margin-top:40px;
-		padding-top:20px;
+		margin-top: 40px;
+		padding-top: 20px;
 		width: 100%;
-		border-top:1px solid #efefef;
-		display:none;
+		border-top: 1px solid $grey2;
+		display: none;
+		text-align: center;
+		font-size: 150%;
 
 		&.visible {
 			display: block;
