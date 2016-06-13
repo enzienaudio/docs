@@ -33,7 +33,7 @@
 		}
 
 		p.italic {
-	    font-style: italic;
+			font-style: italic;
 		}
 
 		.hljs {
@@ -41,8 +41,8 @@
 		}
 
 		code {
-			font-family: 'Avenir-Light';
-			background-color: $pastel-green;
+			font-family: Menlo, monospace;
+			background-color: rgba($pastel-green, 0.5);
 			color: $blue-black;
 		}
 	}
