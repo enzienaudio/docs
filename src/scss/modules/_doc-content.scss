@@ -2,6 +2,15 @@
 
 	margin-top: 0;
 
+	a {
+		color: $link-color;
+	}
+
+	a:hover {
+		color: darken($link-color, 15%);
+		text-decoration: underline;
+	}
+
 	.documentation-content {
 
 		margin-top:10px;
@@ -60,6 +69,4 @@
 		}
 
 	}
-
-
 }
