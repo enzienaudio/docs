@@ -3,7 +3,7 @@
 	margin-top: 0;
 
 	a {
-		color: $link-color;
+		color: darken($link-color, 25%);;
 	}
 
 	a:hover {
