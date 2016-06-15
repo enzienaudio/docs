@@ -8,7 +8,7 @@ var currentPage = "";
 var menuUpdateTimeoutId = -1;
 
 document.addEventListener("DOMContentLoaded", function() {
-	
+
 	setupBurgerIcon();
 
 	setupSideNav();
@@ -37,7 +37,7 @@ function setupBurgerIcon() {
 
 function setupSideNav() {
 
-	
+
 	$('body').on('click', '.side-nav-ul > li > a', function() {
 		$('.side-nav > ul > li > ul > li > a').removeClass('active');
 		$('.side-nav > ul > li > ul > li > ul > li > a').removeClass('active');
@@ -103,7 +103,7 @@ function onHashChangeUpdate(hash) {
 
 	var hashParts = hash.split("#");
 
-	if (hashParts.length > 1){
+	if (hashParts.length > 1) {
 
 		// we've got a valid hash, change the page to update
 
@@ -115,17 +115,21 @@ function onHashChangeUpdate(hash) {
 				break;
 			}
 		}
-		if (selectedPage){
-			if (currentPage !== selectedPage.id){				
-				updatePage(selectedPage.id, function() {
 
-					// go to sub-section after page load
+		if (selectedPage) {
+			if (currentPage !== selectedPage.id){
+
+				updatePage(selectedPage.id, function() {
 					if (hashParts.length > 2) {
 						updateSection(hashParts[2]);
+					} else {
+						// go to top of current page
+						$('html, body').animate({
+							scrollTop: $(".documentation-content").offset().top - 100
+						}, 200);
 					}
 				});
 			} else {
-				// go to sub-section
 				if (hashParts.length > 2) {
 					updateSection(hashParts[2]);
 				} else {
@@ -135,21 +139,10 @@ function onHashChangeUpdate(hash) {
 					}, 200);
 				}
 			}
-
-			
-
-		}else {
+		} else {
 			console.error("ERROR : page ID not found for hash ", hash);
 		}
-
-	} else {
-
-		// uncomment this to load a particular page by default
-
-		// we haven't loaded a page (new visit), so just load the first one
-		// document.location.hash = "#" + TOC_DATA.pages[0].id;
 	}
-
 }
 
 function updatePage(pageId, callback) {
@@ -164,7 +157,7 @@ function updatePage(pageId, callback) {
 				if(block.innerHTML.indexOf("\n") !== -1){
 					hljs.highlightBlock(block);
 				}
-				
+
 			});
 
 			$(".documentation-footer").addClass("visible");
@@ -208,7 +201,7 @@ function updateSection(sectionId) {
 		}, 200);
 
 	}
-	
+
 }
 
 function setupMenuScroll() {
@@ -232,14 +225,14 @@ function updateMenuPositionSize() {
 
 	var menuElement = $(".nav-container");
 	var menuElementStartTop = menuElement.parent().offset().top;
-	
+
 	var menuElementHeight = menuElement.height();
 
 	var currentScroll = (document.body.scrollTop || document.documentElement.scrollTop);
 	var footerElement = $(".main-footer");
 	var containerTop = $(".page-container").offset().top;
 	var visiblePageTop = (containerTop - currentScroll);
-	
+
 	var maxHeight = (visiblePageTop > 0) ? (document.documentElement.clientHeight - visiblePageTop) : document.documentElement.clientHeight;
 
 	menuElement.css("height", maxHeight + "px");
@@ -249,7 +242,7 @@ function updateMenuPositionSize() {
 	menuElementStartTop = menuElement.parent().offset().top;
 	var availableVerticalSpace = (footerElement.offset().top - currentScroll);
 	if ( currentScroll > menuElementStartTop ){
-		menuElement.addClass("stick");		
+		menuElement.addClass("stick");
 		menuElement.css("top", "0px");
 		menuElement.css("width", menuElement.parent().width() + "px");
 	} else {
@@ -262,7 +255,7 @@ function updateMenuPositionSize() {
 		menuElement.css("width", menuElement.parent().width() + "px");
 		menuElement.addClass("stick");
 		menuElement.css("top", (availableVerticalSpace - document.documentElement.clientHeight) + "px");
-	} 
+	}
 
 }
 
