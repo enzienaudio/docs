@@ -128,6 +128,11 @@ function onHashChangeUpdate(hash) {
 				// go to sub-section
 				if (hashParts.length > 2) {
 					updateSection(hashParts[2]);
+				} else {
+					// go to top of current page
+					$('html, body').animate({
+						scrollTop: $(".documentation-content").offset().top - 100
+					}, 200);
 				}
 			}
 
@@ -152,17 +157,38 @@ function updatePage(pageId, callback) {
 	$('.documentation-content').load('docs/' + pageId + ".html", function() {
 		currentPage = pageId;
 
-		$(".documentation-content code").each(function(i, block){
-			// only highlight multi-line blocks
-			if(block.innerHTML.indexOf("\n") !== -1){
-				hljs.highlightBlock(block);
+		function pageLoadComplete() {
+
+			$(".documentation-content code").each(function(i, block){
+				// only highlight multi-line blocks
+				if(block.innerHTML.indexOf("\n") !== -1){
+					hljs.highlightBlock(block);
+				}
+				
+			});
+
+			$(".documentation-footer").addClass("visible");
+
+			if (callback) callback();
+
+		}
+
+		var newImages = $(".documentation-content img").toArray();
+		function onImageLoaded() {
+			// check if all the images are loaded
+			var allImagesLoaded = true;
+			for (var i=0; i < newImages.length; i++){
+				allImagesLoaded = allImagesLoaded && (newImages[i].complete || (newImages[i].width+newImages[i].height > 0));
 			}
-			
-		});
 
-		$(".documentation-footer").addClass("visible");
+			if (allImagesLoaded) pageLoadComplete();
+		}
+		for (var i=0; i < newImages.length; i++){
+			newImages[i].onload = onImageLoaded;
+			newImages[i].onerror = onImageLoaded;
+		}
+		onImageLoaded();
 
-		if (callback) callback();
 	});
 
 	// ensure the correct item in the menu bar is highlighted, particularly on first load
