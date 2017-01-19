@@ -10,13 +10,13 @@ var handlebars = require("node-handlebars");
 
 /*
 	This script reads in all the HTML files from a specific folder
-	(given via the 'src' command line argument), and extracts the 
+	(given via the 'src' command line argument), and extracts the
 	headings within them.
 
 	This then gets passed to a Handlebars compiler, which renders out
 	the main page, with the table of contents statically populated.
 
-	Usage : 
+	Usage :
 	node docs-compiler.js src=/build/docs dest=/build/index.html
 
 	(or use grunt task)
@@ -99,9 +99,9 @@ function processNextHTMLFile() {
 			} else handleParseError(null, "Could not find page title in h1 element", window);
 
 			// 'Sections' are pulled in from <h2> elements
-			var sectionElementList = window.document.documentElement.querySelectorAll("h2");			
+			var sectionElementList = window.document.documentElement.querySelectorAll("h2");
 			for (var i in sectionElementList){
-				
+
 				var sectionObject = { title : "", id :"", parent : "", sections : [] };
 
 				// look for <h3> elements inside this section
@@ -116,9 +116,9 @@ function processNextHTMLFile() {
 				sectionObject.id = sectionElementList[i].getAttribute("id");
 				sectionObject.parent = pageInfoObject.id;
 				pageInfoObject.sections.push(sectionObject);
-				
+
 			}
-			
+
 
 			TOC_DATA.pages.push(pageInfoObject);
 
